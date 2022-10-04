@@ -8,7 +8,7 @@ const JobLists = () => {
           <div className='search_panel-01'>
           <span><i class="ri-search-line"></i>
           </span>
-            <input type="text" placeholder="search by title,companies"/>
+            <input type="text" placeholder="search by title or company"/>
           </div>
 
           <div className='search_panel-02'>
@@ -16,7 +16,7 @@ const JobLists = () => {
           <span><i class="ri-map-pin-line"></i>
           </span>
             <input type="text" placeholder="search by location"/>
-            <button>Search</button>
+            <button className='btn'>Search</button>
           </div>
 
           <div className='search_panel-03'>
@@ -30,6 +30,13 @@ const JobLists = () => {
             </select>
           </div>
         </div>
+
+      <div className="jobs_wrapper">
+        <div className="job_item">
+          
+        </div>
+
+      </div>
       </div>
 
     </div>

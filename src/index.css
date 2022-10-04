@@ -22,7 +22,7 @@ h1,h2{
   border: none;
   outline: none;
   color: #fff;
-  font-size: 9rem;
+  font-size: .9rem;
   border-radius: 5px;
 
 }
@@ -65,8 +65,41 @@ p{
   justify-content: space-between;
 
 }
-.search_panel-01,.search_panel-02{
+.search_panel-01,
+.search_panel-02{
   display: flex;
   align-items: center;
   column-gap: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+.search_panel-01{
+  padding: 15px 25px;
+  width: 330px;
+}
+.search_panel-02{
+  padding: 10px 25px;
+  
+}
+
+.search_panel-03 select{
+  padding: 15px 25px;
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 5px;
+}
+
+.search_panel-01 input,.search_panel-02 input{
+  border: none;
+  outline: none;
+  color: #000;
+  font-size: .9rem;
+
+}
+
+.search_panel-01 span i,.search_panel-02 span i{
+  color: #7c5dfa;
+  font-size: 1.25em;
 }

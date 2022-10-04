@@ -5,6 +5,7 @@ const Header = () => {
     <header className='header'>
       <div className='container'>
         <h1>DevJobs</h1>
+        
       </div>
     </header>
   )
