@@ -1,40 +1,71 @@
-import React from 'react'
+import React, { useState,useEffect} from 'react'
+import { Link } from 'react-router-dom'
+import Search from './Search'
 
 const JobLists = () => {
+  const[jobs,setJobs]=useState([])
+  
+
+
+  
+  const filterJobs= (e)=>{
+    const filterValue=e.target.value;
+    if (filterValue==="full-time") {
+      const filteredData=jobs.filter((job)=>job.contract==="Full Time");
+      setJobs(filteredData);
+      
+    }
+    else if(filterValue==="part-time"){
+      const filteredData=jobs.filter((job)=>job.contract==="Part Time");
+      setJobs(filteredData);
+    }
+    else if(filterValue==="freelance"){
+      const filteredData=jobs.filter((job)=>job.contract==="Freelance");
+      setJobs(filteredData);
+    }
+    else if(filterValue==="contract"){
+      const filteredData=jobs.filter((job)=>job.contract==="Contract");
+      setJobs(filteredData);
+    }else{
+      setJobs(jobs)
+    }
+    
+  }
+  
+
+  
+  useEffect(()=>{
+    fetch("https://devops-job-app.herokuapp.com/jobs")
+    .then(res=>res.json())
+    .then(data=>{
+    setJobs(data)
+    console.log(data)
+    })
+  },[])
+   
   return <section className='job_list'>
     <div className='container'>
       <div className='job_list_wrapper'>
-        <div className='search_panel'>
-          <div className='search_panel-01'>
-          <span><i class="ri-search-line"></i>
-          </span>
-            <input type="text" placeholder="search by title or company"/>
-          </div>
-
-          <div className='search_panel-02'>
-
-          <span><i class="ri-map-pin-line"></i>
-          </span>
-            <input type="text" placeholder="search by location"/>
-            <button className='btn'>Search</button>
-          </div>
-
-          <div className='search_panel-03'>
-            <select>
-            <option >Filter job by</option>
-              <option value="full-time">Full Time</option>
-              <option value="part-time">Part Time</option>
-              <option value="freelance">Freelance</option>
-              <option value="contract">Contract</option>
-              
-            </select>
-          </div>
-        </div>
+        <Search filterJobs={filterJobs}/>
+        
 
       <div className="jobs_wrapper">
-        <div className="job_item">
-          
+        {jobs?.map((job)=>(
+        <div className="job_item" key={job.id}>
+          <img src={job.logo} alt= ""/>
+          <div>
+            <h6>{job.postedAt} - {job.contract} </h6>
+            <h1><Link to={`/jobs/${job.position}`}>{job.position}</Link></h1>
+            <p>{job.company}</p>
+
+            <div className='location'>
+              <p>Location: <span>{job.location}</span></p>
+            </div>
+          </div>
         </div>
+
+        ))}
+        
 
       </div>
       </div>
