@@ -1,20 +1,20 @@
 import React from 'react'
 
-const Search = ({filterJobs}) => {
+const Search = ({filterJobs,searchTerm,setSearchTerm,searchByLocation,setSearchByLocation,locationHandle}) => {
   return (
     <div className='search_panel'>
           <div className='search_panel-01'>
           <span><i className="ri-search-line"></i>
           </span>
-            <input type="text" placeholder="search by title or company"/>
+            <input type="text" placeholder="search by title or company" value={searchTerm} onChange={e=>setSearchTerm(e.target.value)}/>
           </div>
 
           <div className='search_panel-02'>
 
           <span><i className="ri-map-pin-line"></i>
           </span>
-            <input type="text" placeholder="search by location"/>
-            <button className='btn'>Search</button>
+            <input type="text" placeholder="search by location" value={searchByLocation} onChange={e=>setSearchByLocation(e.target.value)}/>
+            <button className='btn' onClick={locationHandle}>Search</button>
           </div>
 
           <div className='search_panel-03'>
