@@ -1,9 +1,9 @@
-import React, { useState,useEffect} from 'react'
+import React, { useState} from 'react'
 import { Link } from 'react-router-dom'
 import Search from './Search'
 
-const JobLists = () => {
-  const[jobs,setJobs]=useState([])
+const JobLists = ({jobs}) => {
+  
   const[filteredJobs,setFilteredJobs]=useState([])
 
   const [searchTerm,setSearchTerm]=useState('')
@@ -43,14 +43,7 @@ const JobLists = () => {
   
 
   
-  useEffect(()=>{
-    fetch("https://devops-job-app.herokuapp.com/jobs")
-    .then(res=>res.json())
-    .then(data=>{
-    setJobs(data)
-    console.log(data)
-    })
-  },[])
+  
    
   const searchTermValue=searchTerm.toLowerCase()
   const displayedJobs=filteredJobs.length>0?filteredJobs:jobs
@@ -62,10 +55,10 @@ const JobLists = () => {
 
       <div className="jobs_wrapper">
         {displayedJobs.filter(job=>{
-          if(searchTerm==='') return job;
           if(job.position.toLowerCase().includes(searchTermValue)
           ||job.company.toLowerCase().includes(searchTermValue))
           return job;
+          return(searchTerm==='') ;
         }).map((job)=>(
         <div className="job_item" key={job.id}>
           <img src={job.logo} alt= ""/>
