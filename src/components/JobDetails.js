@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link,useParams} from "react-router-dom"
+// import Form from './Form'
 
 
 const JobDetails = ({jobs}) => {
   const{position}=useParams()
+  console.log(position)
   const job=jobs.find((job=>job.position===position))
 
   return (
@@ -37,8 +39,13 @@ const JobDetails = ({jobs}) => {
 
           </div>
         </div>
-
+        <div>
+        <Link to="/jobs/add">Add a Job Posting</Link><span className='forward'><i class="ri-share-forward-line"></i></span>
+        </div>  
       </div>
+
+      
+      
     </section>
   )
 }
