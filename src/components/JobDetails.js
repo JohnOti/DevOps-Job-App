@@ -40,7 +40,7 @@ const JobDetails = ({jobs}) => {
           </div>
         </div>
         <div>
-        <Link to="/jobs/add">Add a Job Posting</Link><span className='forward'><i class="ri-share-forward-line"></i></span>
+        <Link to="/jobs/add">Add a Job Posting</Link><span className='forward'><i className="ri-share-forward-line"></i></span>
         </div>  
       </div>
 
