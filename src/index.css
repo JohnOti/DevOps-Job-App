@@ -219,12 +219,19 @@ p{
   }
   .search_panel-01,.search_panel-03 select{
     padding: 7px 20px;
-    font-size: .6rem;
+    
 
   }
   .search_panel-02{
     padding: 5px 20px;
-    font-size: .6rem;
+    
+  }
+  .btn{
+    padding: 5px 20px;
+    font-size: .7rem;
+  }
+  .search_panel-01 input,.search_panel-02 input,.search_panel-03 select{
+    font-size: .7rem;
   }
  }
  @media only screen and (max-width: 576px){
