@@ -9,7 +9,7 @@ I deployed my json server using **herokuapp**.
 --The user can also filter jobs by category or location.  
 --The user can also add to the job listing page any developer job that is available.  
  
-
+## [My Live Link](https://633f403c4e2f310cbb3a0cae--candid-brigadeiros-b4d7a6.netlify.app/)
 ## [My Backend repo](https://github.com/JohnOti/DevOps-Job-App-backend)
 
 # DevOps-Job-App
