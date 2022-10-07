@@ -21,6 +21,7 @@ const AddJobForm = ({jobs,setJobs,url}) => {
   };
    const handleSubmit = (e) => {
     e.preventDefault();
+    
     fetch(url, {
       method: "POST",
       headers: {
@@ -65,7 +66,7 @@ const AddJobForm = ({jobs,setJobs,url}) => {
             <label for="description">Description:</label><br></br>
             <input className="new_job" type="text" placeholder="about job"onChange={handleChange} name="desc" /><br></br>
          
-          <button type = "submit" className='btn'>Submit</button>
+          <button  type = "submit" className='btn'>Submit</button>
       </form>
     </div>       
           

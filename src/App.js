@@ -23,7 +23,7 @@ function App() {
     <Header/>
     <Routes>
       <Route path="/" element={<Navigate to="/jobs"/>}/>
-      <Route path="/jobs" element={<JobLists jobs={jobs}/>}/>
+      <Route path="/jobs" element={<JobLists jobs={jobs} />}/>
       <Route path="/jobs/:position" element={<JobDetails jobs={jobs}/>}/>
       <Route path="/jobs/add" element={<AddJobForm job={jobs} url={url} setJobs={setJobs} />}/>
     </Routes>

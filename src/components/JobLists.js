@@ -2,7 +2,7 @@ import React, { useState} from 'react'
 import { Link } from 'react-router-dom'
 import Search from './Search'
 
-const JobLists = ({jobs}) => {
+const JobLists = ({jobs,handleSubmit}) => {
   
   const[filteredJobs,setFilteredJobs]=useState([])
 
